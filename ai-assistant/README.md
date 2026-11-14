@@ -1,4 +1,3 @@
-
 # 🛡️ CyberGuard AI
 
 **AI-Powered Cybersecurity Assistant**
@@ -13,7 +12,7 @@ The project demonstrates how artificial intelligence can support cybersecurity a
 - **Threat Identification:** Identifies potential cybersecurity threats based on the provided evidence.
 - **Severity Assessment:** Categorizes potential threats as Low, Medium, High, or Critical.
 - **MITRE ATT&CK References:** Identifies relevant MITRE ATT&CK techniques when applicable.
-- **Investigation Recommendations:** Provides three suggested investigation steps.
+- **Investigation Recommendations:** Provides suggested investigation steps.
 - **Beginner-Friendly Explanations:** Explains security concepts in accessible language.
 - **Sample Alerts:** Includes examples of brute-force attacks, phishing emails, and malware detection.
 - **Interactive Dashboard:** Provides a custom dark-blue interface built with Streamlit.
@@ -62,11 +61,9 @@ python -m pip install -r requirements.txt
 
 ### 4. Configure your Gemini API key
 
-Create a Gemini API key through Google AI Studio.
+Create a Gemini API key through [Google AI Studio](https://aistudio.google.com/).
 
-Set it as an environment variable named:
-
-`GEMINI_API_KEY`
+Set it as an environment variable named `GEMINI_API_KEY`.
 
 **Windows Command Prompt:**
 
@@ -74,7 +71,13 @@ Set it as an environment variable named:
 setx GEMINI_API_KEY "YOUR_API_KEY"
 ```
 
-Replace `YOUR_API_KEY` with your actual key. Restart your terminal after setting the variable.
+Replace `YOUR_API_KEY` with your actual key. Close and reopen Command Prompt after setting the variable so the new environment variable becomes available.
+
+To verify that the variable is configured without displaying the key, run:
+
+```cmd
+if defined GEMINI_API_KEY (echo API key is configured) else (echo API key is missing)
+```
 
 Never upload your API key to GitHub or include it in source code.
 
@@ -94,6 +97,20 @@ The application should open in your browser at:
 2. The application sends the alert to Google's Gemini AI.
 3. Gemini analyzes the information and generates a structured response.
 4. CyberGuard AI displays the potential threat, severity, explanation, relevant MITRE ATT&CK technique, investigation steps, and additional information needed.
+
+## Application Testing
+
+CyberGuard AI was tested using three sample security scenarios.
+
+| Test scenario | Detected severity | Outcome |
+|---|---|---|
+| Repeated failed administrator logins followed by a successful login and sensitive file access | High | Identified suspected brute-force activity and possible credential compromise |
+| Normal employee login from a familiar company device during business hours | Low | Recognized the activity as normal |
+| Suspicious email impersonating the IT department with an unfamiliar password-reset link | Medium | Identified suspected phishing and credential harvesting |
+
+The application generated structured explanations and investigation recommendations for all three tests.
+
+These results demonstrate the application's ability to analyze different security scenarios. AI-generated findings and technique mappings still require human review and verification.
 
 ## Project Purpose
 
