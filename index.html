@@ -4,10 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Arlette Torres - Computer Science Student and Aspiring SOC Analyst">
+
+    <meta
+        name="description"
+        content="Arlette Torres - Computer Science Student and Aspiring SOC Analyst"
+    >
+
     <title>Arlette Torres | Cybersecurity Portfolio</title>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
     <header>
@@ -27,13 +34,19 @@
 
     <main>
 
+        <!-- HOME SECTION -->
         <section id="home" class="hero">
+
             <div class="hero-content">
                 <p class="eyebrow">WELCOME TO MY PORTFOLIO</p>
 
-                <h1>Hi, I'm <span>Arlette Torres.</span></h1>
+                <h1>
+                    Hi, I'm <span>Arlette Torres.</span>
+                </h1>
 
-                <h2>Computer Science Student | Aspiring SOC Analyst</h2>
+                <h2>
+                    Computer Science Student | Aspiring SOC Analyst
+                </h2>
 
                 <p>
                     Passionate about cybersecurity, information technology,
@@ -41,33 +54,50 @@
                     cybersecurity through hands-on projects and continuous learning.
                 </p>
 
-                <a href="#projects" class="btn">Explore My Projects</a>
+                <a href="#projects" class="btn">
+                    Explore My Projects
+                </a>
             </div>
 
             <div class="hero-image">
-                <img src="assets/profile.jpg"
-                     alt="Professional photograph of Arlette Torres">
+                <img
+                    src="assets/profile.jpg"
+                    alt="Professional photograph of Arlette Torres"
+                >
             </div>
+
         </section>
 
+
+        <!-- ABOUT ME SECTION -->
         <section id="about" class="section">
+
             <h2>About Me</h2>
-            <p>My background, education, interests, and professional goals.</p>
+
+            <p>
+                My background, education, interests, and professional goals.
+            </p>
+
             <div id="about-content"></div>
+
         </section>
 
+
+        <!-- TECHNICAL SKILLS SECTION -->
         <section id="skills" class="section">
+
             <h2>Technical Skills</h2>
 
             <div class="skills-grid">
+
                 <div class="skill-card">
                     <h3>Programming</h3>
-                    <p>Java, C++, C, Python</p>
+                    <p>Java, C++, C, Python, JavaScript</p>
                 </div>
 
                 <div class="skill-card">
                     <h3>Systems & Tools</h3>
-                    <p>Linux, Ubuntu, VirtualBox, Git, GitHub</p>
+                    <p>Linux, Ubuntu, Windows, VirtualBox, Git, GitHub</p>
                 </div>
 
                 <div class="skill-card">
@@ -77,75 +107,243 @@
 
                 <div class="skill-card">
                     <h3>Cybersecurity</h3>
-                    <p>Network Security, Linux Security, Web Security</p>
+                    <p>
+                        Network Security, Web Security, CSRF,
+                        Authentication, Security Analysis
+                    </p>
                 </div>
 
                 <div class="skill-card">
                     <h3>AI Tools</h3>
-                    <p>ChatGPT and AI-assisted development</p>
+                    <p>ChatGPT, Google Gemini, AI-Assisted Development</p>
                 </div>
+
             </div>
+
         </section>
 
+
+        <!-- PROJECTS SECTION -->
         <section id="projects" class="section">
+
             <h2>Featured Projects</h2>
+
+            <p>
+                Explore my academic and independent projects,
+                demonstrating my interests in cybersecurity,
+                software development, and technology.
+            </p>
 
             <div class="projects-grid">
 
+                <!-- PROJECT 1: CYBERGUARD AI -->
                 <article class="project-card">
-                    <h3>AI Cybersecurity Assistant</h3>
+
+                    <img
+                        src="ai-assistant/screenshots/dashboard.png"
+                        alt="CyberGuard AI application dashboard"
+                        class="project-image"
+                    >
+
+                    <h3>CyberGuard AI</h3>
+
                     <p>
-                        An AI-assisted application designed to help users
-                        understand security alerts and suspicious activity.
+                        An AI-powered cybersecurity assistant developed
+                        to analyze security alerts, identify potential
+                        threats, assess severity, and recommend
+                        investigation steps. Integrates Google's Gemini
+                        API to provide beginner-friendly security analysis.
                     </p>
-                    <p><strong>Technologies:</strong> Python, AI, Cybersecurity</p>
-                    <span>In Development</span>
+
+                    <p>
+                        <strong>Technologies:</strong>
+                        Python, Streamlit, Google Gemini API, HTML, CSS
+                    </p>
+
+                    <a
+                        href="https://github.com/ArletteT3/github-portfolio/tree/main/ai-assistant"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn"
+                    >
+                        View Project
+                    </a>
+
                 </article>
 
+
+                <!-- PROJECT 2: CSRF ATTACK SIMULATION -->
                 <article class="project-card">
-                    <h3>Mini Task & Team Tracker</h3>
+
+                    <img
+                        src="assets/project-screenshots/csrf/csrf-token-protection.png"
+                        alt="CSRF token protection demonstration"
+                        class="project-image"
+                    >
+
+                    <h3>CSRF Attack Simulation</h3>
+
                     <p>
-                        A team-based application for managing tasks and
-                        tracking project information using a database.
+                        A cybersecurity lab project demonstrating
+                        Cross-Site Request Forgery (CSRF) vulnerabilities
+                        through GET and POST attacks. Explores how
+                        CSRF tokens help prevent unauthorized requests
+                        and improve web application security.
                     </p>
-                    <p><strong>Technologies:</strong> MySQL, Node.js, Express</p>
+
+                    <p>
+                        <strong>Technologies:</strong>
+                        HTML, JavaScript, Web Security, Linux, VirtualBox
+                    </p>
+
+                    <a
+                        href="https://github.com/ArletteT3/csrf-attack-simulation-seed-lab"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn"
+                    >
+                        View Project
+                    </a>
+
                 </article>
 
+
+                <!-- PROJECT 3: PIN SECURITY SIMULATOR -->
                 <article class="project-card">
+
+                    <img
+                        src="assets/project-screenshots/pin-security-simulator.png"
+                        alt="PIN Security Simulator running in Java"
+                        class="project-image"
+                    >
+
                     <h3>PIN Security Simulator</h3>
+
                     <p>
-                        A programming project exploring PIN security
-                        and authentication concepts.
+                        A Java application that evaluates PIN security
+                        by analyzing password complexity and estimating
+                        the time required for a brute-force attack.
+                        Demonstrates fundamental authentication
+                        and password security concepts.
                     </p>
-                    <p><strong>Technologies:</strong> Programming, Security</p>
+
+                    <p>
+                        <strong>Technologies:</strong>
+                        Java, Eclipse IDE, Programming Fundamentals
+                    </p>
+
+                    <a
+                        href="https://github.com/ArletteT3/Pin-Security-Simulator"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn"
+                    >
+                        View Project
+                    </a>
+
                 </article>
 
             </div>
+
         </section>
 
+
+        <!-- RESUME SECTION -->
         <section id="resume" class="section">
+
             <h2>My Resume</h2>
-            <p>Explore my education, technical experience, and qualifications.</p>
-            <a href="resume.pdf" class="btn" target="_blank">View Resume</a>
-            <a href="resume.pdf" class="btn secondary" download>Download PDF</a>
+
+            <p>
+                Explore my education, technical experience,
+                projects, and professional qualifications.
+            </p>
+
+            <div class="resume-buttons">
+
+                <a
+                    href="resume.pdf"
+                    class="btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    View Resume
+                </a>
+
+                <a
+                    href="resume.pdf"
+                    class="btn secondary"
+                    download
+                >
+                    Download PDF
+                </a>
+
+            </div>
+
+            <div class="resume-preview">
+
+                <iframe
+                    src="resume.pdf"
+                    title="Arlette Torres Professional Resume"
+                    width="100%"
+                    height="650"
+                    loading="lazy"
+                ></iframe>
+
+            </div>
+
         </section>
 
+
+        <!-- CONTACT SECTION -->
         <section id="contact" class="section">
+
             <h2>Let's Connect</h2>
-            <p>I'm interested in opportunities in cybersecurity and IT.</p>
+
+            <p>
+                I'm interested in opportunities in cybersecurity,
+                information technology, and software development.
+                Feel free to connect with me!
+            </p>
+
             <div class="contact-links">
-                <a href="mailto:YOUR_EMAIL">Email Me</a>
-                <a href="https://github.com/ArletteT3" target="_blank">GitHub</a>
-                <a href="YOUR_LINKEDIN_URL" target="_blank">LinkedIn</a>
+
+                <a href="mailto:avtorres2004@gmail.com">
+                    Email Me
+                </a>
+
+                <a
+                    href="https://github.com/ArletteT3"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/arlette-torres-b7ba35325/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn
+                </a>
+
             </div>
+
         </section>
 
     </main>
 
+
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Arlette Torres. All rights reserved.</p>
+        <p>
+            &copy; 2026 Arlette Torres. All rights reserved.
+        </p>
     </footer>
 
+
+    <!-- JAVASCRIPT -->
     <script src="js/script.js"></script>
+
 </body>
 </html>
