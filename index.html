@@ -4,89 +4,427 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Arlette Torres - Computer Science Student and Aspiring SOC Analyst. Explore my cybersecurity and software development portfolio.">
+    <title>Arlette Torres | Computer Science Portfolio</title>
 
-    <meta
-        name="description"
-        content="Arlette Torres - Computer Science Student and Aspiring SOC Analyst"
-    >
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-    <title>Arlette Torres | Cybersecurity Portfolio</title>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #081426;
+            color: #e8eef7;
+            line-height: 1.7;
+        }
 
-    <link rel="stylesheet" href="css/style.css">
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        header {
+            background: #0d1c32;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #203752;
+        }
+
+        .logo {
+            color: #65b9ff;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #e8eef7;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #65b9ff;
+        }
+
+        section {
+            padding: 85px 10%;
+            scroll-margin-top: 75px;
+        }
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 55px;
+            flex-wrap: wrap;
+            background: linear-gradient(135deg, #081426, #102b49);
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            color: #65b9ff;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #c4d2e3;
+            font-size: 1.05rem;
+            margin-bottom: 28px;
+        }
+
+        .profile-photo {
+            width: 240px;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #65b9ff;
+            box-shadow: 0 0 30px rgba(101, 185, 255, 0.2);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 11px 22px;
+            background: #65b9ff;
+            color: #081426;
+            border-radius: 6px;
+            font-weight: bold;
+            margin: 5px 8px 5px 0;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .button-outline {
+            background: transparent;
+            color: #65b9ff;
+            border: 1px solid #65b9ff;
+        }
+
+        .button-outline:hover {
+            background: #65b9ff;
+            color: #081426;
+        }
+
+        .section-title {
+            color: #65b9ff;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-content {
+            max-width: 950px;
+            margin: auto;
+        }
+
+        .about-text {
+            color: #c4d2e3;
+            font-size: 1.03rem;
+            text-align: justify;
+        }
+
+        .about-text p {
+            margin-bottom: 17px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+        }
+
+        .skill-card {
+            background: #10243d;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #203752;
+        }
+
+        .skill-card h3 {
+            color: #65b9ff;
+            margin-bottom: 12px;
+        }
+
+        .skill-card p {
+            color: #c4d2e3;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #10243d;
+            border: 1px solid #28415f;
+            border-radius: 10px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #65b9ff;
+        }
+
+        .project-card h3 {
+            color: #65b9ff;
+            font-size: 1.35rem;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: #c4d2e3;
+            margin-bottom: 18px;
+        }
+
+        .project-card h4 {
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .technologies {
+            color: #d7e4f2;
+            font-size: 0.9rem;
+            margin-bottom: 22px;
+        }
+
+        .project-card .button {
+            align-self: flex-start;
+            margin-top: auto;
+        }
+
+        .resume-container {
+            background: #10243d;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #28415f;
+            text-align: center;
+        }
+
+        .resume-container p {
+            color: #c4d2e3;
+            margin-bottom: 20px;
+        }
+
+        .resume-preview {
+            width: 100%;
+            height: 700px;
+            border: 1px solid #526a85;
+            border-radius: 6px;
+            background: #ffffff;
+            margin-top: 25px;
+        }
+
+        .contact-container {
+            text-align: center;
+            background: #10243d;
+            padding: 35px;
+            border-radius: 10px;
+            border: 1px solid #28415f;
+        }
+
+        .contact-container p {
+            color: #c4d2e3;
+            margin-bottom: 15px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        footer {
+            background: #050e1a;
+            color: #9eb0c5;
+            text-align: center;
+            padding: 22px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 13px;
+            }
+
+            section {
+                padding: 65px 7%;
+            }
+
+            .hero {
+                text-align: center;
+                padding-top: 60px;
+            }
+
+            .profile-photo {
+                width: 190px;
+                height: 190px;
+            }
+
+            .resume-preview {
+                height: 500px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
+    <!-- Navigation -->
     <header>
-        <nav class="navbar">
-            <a href="#home" class="logo">AT.</a>
+        <div class="logo">Arlette Torres</div>
 
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#resume">Resume</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <main>
-
-        <!-- HOME SECTION -->
-        <section id="home" class="hero">
-
-            <div class="hero-content">
-                <p class="eyebrow">WELCOME TO MY PORTFOLIO</p>
-
-                <h1>
-                    Hi, I'm <span>Arlette Torres.</span>
-                </h1>
-
-                <h2>
-                    Computer Science Student | Aspiring SOC Analyst
-                </h2>
-
-                <p>
-                    Passionate about cybersecurity, information technology,
-                    and software development. Building my future in
-                    cybersecurity through hands-on projects and continuous learning.
-                </p>
-
-                <a href="#projects" class="btn">
-                    Explore My Projects
-                </a>
-            </div>
-
-            <div class="hero-image">
-                <img
-                    src="assets/profile.jpg"
-                    alt="Professional photograph of Arlette Torres"
-                >
-            </div>
-
-        </section>
-
-
-        <!-- ABOUT ME SECTION -->
-        <section id="about" class="section">
-
-            <h2>About Me</h2>
+    <!-- Home -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Arlette Torres</h1>
+            <h2>Computer Science Student | Aspiring SOC Analyst</h2>
 
             <p>
-                My background, education, interests, and professional goals.
+                Welcome to my professional portfolio. I am a Computer Science
+                student interested in cybersecurity, digital forensics,
+                software development, and information security. I enjoy
+                building technical projects and developing practical skills
+                that help solve real-world problems.
             </p>
 
-            <div id="about-content"></div>
+            <a href="#projects" class="button">Explore My Projects</a>
+            <a href="#contact" class="button button-outline">Contact Me</a>
+        </div>
 
-        </section>
+        <img
+            src="assets/profile.jpg"
+            alt="Professional photograph of Arlette Torres"
+            class="profile-photo"
+        >
+    </section>
 
+    <!-- About Me -->
+    <section id="about">
+        <div class="section-content">
+            <h2 class="section-title">About Me</h2>
 
-        <!-- TECHNICAL SKILLS SECTION -->
-        <section id="skills" class="section">
+            <div class="about-text">
+                <p>
+                    My name is Arlette Torres, and I am a Computer Science
+                    student at Lamar University with an expected graduation
+                    date of December 2026. I previously earned an Associate
+                    of Science in Biological Sciences from Lamar Institute
+                    of Technology in 2023. My academic journey has helped
+                    me develop an interest in technology, problem-solving,
+                    and the ways computing can be used to address practical
+                    challenges.
+                </p>
 
-            <h2>Technical Skills</h2>
+                <p>
+                    My primary career interest is cybersecurity, particularly
+                    Security Operations Center (SOC) analysis and digital
+                    forensics. I am interested in understanding how security
+                    incidents occur, identifying suspicious activity,
+                    investigating potential threats, and helping organizations
+                    protect their systems and information. I am also interested
+                    in incident response and learning how security teams use
+                    monitoring tools, technical analysis, and established
+                    frameworks to investigate threats.
+                </p>
+
+                <p>
+                    Through my coursework and independent projects, I have
+                    gained experience with programming languages such as
+                    Java, C++, C, and Python. I have also worked with Linux
+                    and Ubuntu environments, networking concepts, MySQL,
+                    Git, GitHub, VirtualBox, and software development tools.
+                    My projects have allowed me to explore subjects such as
+                    web security, Cross-Site Request Forgery (CSRF), PIN
+                    security, and AI-assisted cybersecurity analysis.
+                </p>
+
+                <p>
+                    I have also had opportunities to strengthen my
+                    communication and teamwork skills through academic
+                    group projects and professional experiences. Working
+                    with others has taught me the importance of explaining
+                    technical concepts clearly, organizing tasks, documenting
+                    progress, and approaching problems patiently. I value
+                    continuous learning and understand that technology and
+                    cybersecurity require professionals to keep developing
+                    their knowledge.
+                </p>
+
+                <p>
+                    My professional goal is to begin my career in an entry-level
+                    cybersecurity or IT position, ideally as a SOC Analyst,
+                    where I can apply my technical foundation while gaining
+                    hands-on experience with security monitoring, threat
+                    detection, and incident investigation. I plan to continue
+                    strengthening my Linux, networking, scripting, and
+                    cybersecurity knowledge while preparing for industry
+                    certifications. I hope to grow into a cybersecurity
+                    professional who can contribute to protecting systems,
+                    supporting users, and responding effectively to security
+                    challenges.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <div class="section-content">
+            <h2 class="section-title">Technical Skills</h2>
 
             <div class="skills-grid">
 
@@ -96,254 +434,225 @@
                 </div>
 
                 <div class="skill-card">
-                    <h3>Systems & Tools</h3>
-                    <p>Linux, Ubuntu, Windows, VirtualBox, Git, GitHub</p>
+                    <h3>Systems and Tools</h3>
+                    <p>Linux, Ubuntu, Windows, VirtualBox, Git, GitHub, Eclipse IDE</p>
                 </div>
 
                 <div class="skill-card">
-                    <h3>Databases & Development</h3>
+                    <h3>Databases and Development</h3>
                     <p>MySQL, Node.js, Express, Postman</p>
                 </div>
 
                 <div class="skill-card">
                     <h3>Cybersecurity</h3>
-                    <p>
-                        Network Security, Web Security, CSRF,
-                        Authentication, Security Analysis
-                    </p>
+                    <p>Network Security, Web Security, CSRF, Authentication, Security Analysis, Digital Forensics Fundamentals</p>
                 </div>
 
                 <div class="skill-card">
-                    <h3>AI Tools</h3>
-                    <p>ChatGPT, Google Gemini, AI-Assisted Development</p>
+                    <h3>Networking</h3>
+                    <p>TCP/IP, Client-Server Communication, Sockets, IP Addressing, ARP</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>AI and Development Tools</h3>
+                    <p>Google Gemini API, Streamlit, ChatGPT, AI-Assisted Development</p>
                 </div>
 
             </div>
+        </div>
+    </section>
 
-        </section>
-
-
-        <!-- PROJECTS SECTION -->
-        <section id="projects" class="section">
-
-            <h2>Featured Projects</h2>
-
-            <p>
-                Explore my academic and independent projects,
-                demonstrating my interests in cybersecurity,
-                software development, and technology.
-            </p>
+    <!-- Projects -->
+    <section id="projects">
+        <div class="section-content">
+            <h2 class="section-title">My Projects</h2>
 
             <div class="projects-grid">
 
-                <!-- PROJECT 1: CYBERGUARD AI -->
-                <article class="project-card">
-
-                    <img
-                        src="ai-assistant/screenshots/dashboard.png"
-                        alt="CyberGuard AI application dashboard"
-                        class="project-image"
-                    >
-
+                <!-- Project 1 -->
+                <div class="project-card">
                     <h3>CyberGuard AI</h3>
 
                     <p>
-                        An AI-powered cybersecurity assistant developed
-                        to analyze security alerts, identify potential
-                        threats, assess severity, and recommend
-                        investigation steps. Integrates Google's Gemini
-                        API to provide beginner-friendly security analysis.
+                        CyberGuard AI is a beginner-friendly cybersecurity
+                        assistant designed to analyze suspicious security
+                        alerts and help users understand potential threats.
+                        It uses AI to identify suspicious activity, explain
+                        possible risks, assign severity levels, and recommend
+                        investigation steps. The project also introduces
+                        security concepts such as MITRE ATT&CK.
                     </p>
 
-                    <p>
-                        <strong>Technologies:</strong>
-                        Python, Streamlit, Google Gemini API, HTML, CSS
-                    </p>
+                    <h4>Technologies Used</h4>
+                    <div class="technologies">
+                        Python, Streamlit, Google Gemini API
+                    </div>
 
                     <a
                         href="https://github.com/ArletteT3/github-portfolio/tree/main/ai-assistant"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="btn"
+                        class="button"
                     >
-                        View Project
+                        View GitHub Project
                     </a>
+                </div>
 
-                </article>
-
-
-                <!-- PROJECT 2: CSRF ATTACK SIMULATION -->
-                <article class="project-card">
-
-                    <img
-                        src="assets/project-screenshots/csrf/csrf-token-protection.png"
-                        alt="CSRF token protection demonstration"
-                        class="project-image"
-                    >
-
-                    <h3>CSRF Attack Simulation</h3>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <h3>CSRF Attack Simulation – SEED Lab</h3>
 
                     <p>
-                        A cybersecurity lab project demonstrating
-                        Cross-Site Request Forgery (CSRF) vulnerabilities
-                        through GET and POST attacks. Explores how
-                        CSRF tokens help prevent unauthorized requests
-                        and improve web application security.
+                        This project explores Cross-Site Request Forgery
+                        (CSRF), a web security vulnerability in which an
+                        attacker attempts to trick an authenticated user
+                        into performing an unwanted action. Through the
+                        SEED Labs environment, I explored attack scenarios,
+                        examined GET and POST requests, and investigated
+                        how CSRF tokens help protect web applications.
                     </p>
 
-                    <p>
-                        <strong>Technologies:</strong>
-                        HTML, JavaScript, Web Security, Linux, VirtualBox
-                    </p>
+                    <h4>Technologies Used</h4>
+                    <div class="technologies">
+                        Web Security, CSRF, HTML, HTTP Requests, SEED Labs
+                    </div>
 
                     <a
                         href="https://github.com/ArletteT3/csrf-attack-simulation-seed-lab"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="btn"
+                        class="button"
                     >
-                        View Project
+                        View GitHub Project
                     </a>
+                </div>
 
-                </article>
-
-
-                <!-- PROJECT 3: PIN SECURITY SIMULATOR -->
-                <article class="project-card">
-
-                    <img
-                        src="assets/project-screenshots/pin-security-simulator.png"
-                        alt="PIN Security Simulator running in Java"
-                        class="project-image"
-                    >
-
+                <!-- Project 3 -->
+                <div class="project-card">
                     <h3>PIN Security Simulator</h3>
 
                     <p>
-                        A Java application that evaluates PIN security
-                        by analyzing password complexity and estimating
-                        the time required for a brute-force attack.
-                        Demonstrates fundamental authentication
-                        and password security concepts.
+                        This Java project demonstrates basic PIN security
+                        concepts through a simulated PIN verification
+                        system. It explores user input, authentication
+                        logic, and security-related programming concepts.
+                        The project helped strengthen my understanding
+                        of Java programming and how authentication
+                        processes can be implemented.
                     </p>
 
-                    <p>
-                        <strong>Technologies:</strong>
-                        Java, Eclipse IDE, Programming Fundamentals
-                    </p>
+                    <h4>Technologies Used</h4>
+                    <div class="technologies">
+                        Java, Object-Oriented Programming, Authentication Logic
+                    </div>
 
                     <a
                         href="https://github.com/ArletteT3/Pin-Security-Simulator"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="btn"
+                        class="button"
                     >
-                        View Project
+                        View GitHub Project
                     </a>
-
-                </article>
+                </div>
 
             </div>
+        </div>
+    </section>
 
-        </section>
+    <!-- Resume -->
+    <section id="resume">
+        <div class="section-content">
+            <h2 class="section-title">My Resume</h2>
 
-
-        <!-- RESUME SECTION -->
-        <section id="resume" class="section">
-
-            <h2>My Resume</h2>
-
-            <p>
-                Explore my education, technical experience,
-                projects, and professional qualifications.
-            </p>
-
-            <div class="resume-buttons">
+            <div class="resume-container">
+                <p>
+                    View or download my resume to learn more about my
+                    education, technical skills, projects, and experience.
+                </p>
 
                 <a
                     href="resume.pdf"
-                    class="btn"
                     target="_blank"
-                    rel="noopener noreferrer"
+                    class="button"
                 >
                     View Resume
                 </a>
 
                 <a
                     href="resume.pdf"
-                    class="btn secondary"
                     download
+                    class="button button-outline"
                 >
-                    Download PDF
+                    Download Resume PDF
                 </a>
-
-            </div>
-
-            <div class="resume-preview">
 
                 <iframe
                     src="resume.pdf"
-                    title="Arlette Torres Professional Resume"
-                    width="100%"
-                    height="650"
-                    loading="lazy"
+                    class="resume-preview"
+                    title="Arlette Torres Resume"
                 ></iframe>
-
             </div>
+        </div>
+    </section>
 
-        </section>
+    <!-- Contact -->
+    <section id="contact">
+        <div class="section-content">
+            <h2 class="section-title">Contact Me</h2>
 
+            <div class="contact-container">
+                <p>
+                    Thank you for visiting my portfolio! I welcome
+                    opportunities to connect with professionals,
+                    recruiters, and others in the technology and
+                    cybersecurity fields.
+                </p>
 
-        <!-- CONTACT SECTION -->
-        <section id="contact" class="section">
+                <div class="contact-links">
 
-            <h2>Let's Connect</h2>
+                    <a
+                        href="mailto:avtorres2004@gmail.com"
+                        class="button"
+                    >
+                        Email Me
+                    </a>
 
-            <p>
-                I'm interested in opportunities in cybersecurity,
-                information technology, and software development.
-                Feel free to connect with me!
-            </p>
+                    <a
+                        href="https://www.linkedin.com/in/arlette-torres-b7ba35325/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="button button-outline"
+                    >
+                        LinkedIn
+                    </a>
 
-            <div class="contact-links">
+                    <a
+                        href="https://github.com/ArletteT3"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="button button-outline"
+                    >
+                        GitHub
+                    </a>
 
-                <a href="mailto:avtorres2004@gmail.com">
-                    Email Me
-                </a>
-
-                <a
-                    href="https://github.com/ArletteT3"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    GitHub
-                </a>
-
-                <a
-                    href="https://www.linkedin.com/in/arlette-torres-b7ba35325/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    LinkedIn
-                </a>
-
+                </div>
             </div>
+        </div>
+    </section>
 
-        </section>
-
-    </main>
-
-
-    <!-- FOOTER -->
+    <!-- Footer -->
     <footer>
         <p>
-            &copy; 2026 Arlette Torres. All rights reserved.
+            &copy; <span id="year"></span> Arlette Torres.
+            All Rights Reserved.
         </p>
     </footer>
 
-
-    <!-- JAVASCRIPT -->
-    <script src="js/script.js"></script>
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
 
 </body>
 </html>
